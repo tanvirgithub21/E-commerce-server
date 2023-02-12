@@ -81,13 +81,13 @@ userRoute.get("/login", createJWT, async (req, res) => {
                         if (matchPassword) {
                             res.status(200).json({ message: "Login successful", accessToken: req.accessToken })
                         } else {
-                            res.status(403).json({ message: "incorrect password" })
+                            res.status(403).json({ error: "incorrect password" })
                         }
                     } else {
-                        res.status(403).json({ message: "Forbidden Access" })
+                        res.status(403).json({ error: "Forbidden Access" })
                     }
                 } else {
-                    res.status(404).json({ message: "User not found" })
+                    res.status(404).json({ error: "User not found" })
                 }
             })
     } catch {

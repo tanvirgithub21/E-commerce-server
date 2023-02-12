@@ -7,6 +7,7 @@ const userRoute = require('./routeHandler/userRoute');
 
 
 const cors = require('cors');
+const productRoute = require('./routeHandler/productRoute');
 require('dotenv').config();
 const app = express();
 
@@ -26,6 +27,7 @@ mongoose.connect("mongodb+srv://tanvir321:tanvir321@cluster0.wdaooaq.mongodb.net
 
 // Routes handle
 app.use("/user", userRoute)
+app.use("/product", productRoute)
 
 
 
